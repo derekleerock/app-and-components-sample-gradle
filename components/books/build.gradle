@@ -1,0 +1,33 @@
+apply plugin: "java"
+
+ext {
+    springVersion = "4.3.18.RELEASE"
+    slf4jVersion = "1.7.21"
+    jacksonVersion = "2.8.1"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework:spring-web:$springVersion"
+
+    testCompile("junit:junit:4.12")
+    testCompile("javax.servlet:javax.servlet-api:3.1.0")
+    testCompile("org.springframework:spring-test:${springVersion}")
+    testCompile("com.jayway.jsonpath:json-path-assert:2.2.0")
+    testCompile "org.springframework:spring-webmvc:$springVersion"
+    testCompile("com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}")
+    testCompile "org.slf4j:slf4j-api:$slf4jVersion"
+    testCompile "org.slf4j:slf4j-simple:$slf4jVersion"
+}
+
+test {
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}

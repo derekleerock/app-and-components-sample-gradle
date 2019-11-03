@@ -1,1 +1,6 @@
 rootProject.name = 'app-and-components'
+
+include "applications:bookstore-app"
+
+include "components:books"
+include "components:magazines"
