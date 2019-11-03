@@ -1,13 +1,4 @@
-apply plugin: "java"
-
-ext {
-    springVersion = "4.3.18.RELEASE"
-    slf4jVersion = "1.7.21"
-    jacksonVersion = "2.8.1"
-}
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+apply from: "../../java.gradle"
 
 repositories {
     mavenCentral()
